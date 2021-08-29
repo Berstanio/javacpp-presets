@@ -20,22 +20,20 @@
  * limitations under the License.
  */
 
-import org.bytedeco.javacpp.BytePointer;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.PointerPointer;
-import org.bytedeco.llvm.LLVM.LLVMBasicBlockRef;
-import org.bytedeco.llvm.LLVM.LLVMBuilderRef;
-import org.bytedeco.llvm.LLVM.LLVMContextRef;
-import org.bytedeco.llvm.LLVM.LLVMExecutionEngineRef;
-import org.bytedeco.llvm.LLVM.LLVMGenericValueRef;
-import org.bytedeco.llvm.LLVM.LLVMMemoryBufferRef;
-import org.bytedeco.llvm.LLVM.LLVMModuleRef;
-import org.bytedeco.llvm.LLVM.LLVMTargetMachineRef;
-import org.bytedeco.llvm.LLVM.LLVMTargetRef;
-import org.bytedeco.llvm.LLVM.LLVMTypeRef;
-import org.bytedeco.llvm.LLVM.LLVMValueRef;
-
-import static org.bytedeco.llvm.global.LLVM.*;
+import  com.oracle.svm.shadowed.org.bytedeco.javacpp.BytePointer;
+import  com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import  com.oracle.svm.shadowed.org.bytedeco.javacpp.PointerPointer;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMBasicBlockRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMBuilderRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMContextRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMExecutionEngineRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMGenericValueRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMMemoryBufferRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMModuleRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMTargetMachineRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMTargetRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMTypeRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMValueRef;
 
 /**
  * This file contains two samples related to emitting LLVM bitcode and interpreting it.

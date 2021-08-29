@@ -20,25 +20,24 @@
  * limitations under the License.
  */
 
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.javacpp.LongPointer;
-import org.bytedeco.javacpp.Pointer;
-import org.bytedeco.javacpp.PointerPointer;
+import  com.oracle.svm.shadowed.org.bytedeco.javacpp.IntPointer;
+import  com.oracle.svm.shadowed.org.bytedeco.javacpp.LongPointer;
+import  com.oracle.svm.shadowed.org.bytedeco.javacpp.Pointer;
+import  com.oracle.svm.shadowed.org.bytedeco.javacpp.PointerPointer;
 import org.bytedeco.libffi.ffi_cif;
-import org.bytedeco.llvm.LLVM.LLVMBasicBlockRef;
-import org.bytedeco.llvm.LLVM.LLVMBuilderRef;
-import org.bytedeco.llvm.LLVM.LLVMContextRef;
-import org.bytedeco.llvm.LLVM.LLVMErrorRef;
-import org.bytedeco.llvm.LLVM.LLVMModuleRef;
-import org.bytedeco.llvm.LLVM.LLVMOrcJITDylibRef;
-import org.bytedeco.llvm.LLVM.LLVMOrcLLJITBuilderRef;
-import org.bytedeco.llvm.LLVM.LLVMOrcLLJITRef;
-import org.bytedeco.llvm.LLVM.LLVMOrcThreadSafeContextRef;
-import org.bytedeco.llvm.LLVM.LLVMOrcThreadSafeModuleRef;
-import org.bytedeco.llvm.LLVM.LLVMTypeRef;
-import org.bytedeco.llvm.LLVM.LLVMValueRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMBasicBlockRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMBuilderRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMContextRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMErrorRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMModuleRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMOrcJITDylibRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMOrcLLJITBuilderRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMOrcLLJITRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMOrcThreadSafeContextRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMOrcThreadSafeModuleRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMTypeRef;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.LLVM.LLVMValueRef;
 
-import static org.bytedeco.llvm.global.LLVM.*;
 import static org.bytedeco.libffi.global.ffi.*;
 
 /**

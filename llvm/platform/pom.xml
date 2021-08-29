@@ -134,15 +134,15 @@
                 <module>
                   <file>${project.build.directory}/${project.artifactId}.jar</file>
                   <moduleInfoSource>
-                    module org.bytedeco.${javacpp.moduleId}.platform {
-                      requires static org.bytedeco.${javacpp.moduleId}.linux.x86;
-                      requires static org.bytedeco.${javacpp.moduleId}.linux.x86_64;
-                      requires static org.bytedeco.${javacpp.moduleId}.linux.armhf;
-                      requires static org.bytedeco.${javacpp.moduleId}.linux.arm64;
-                      requires static org.bytedeco.${javacpp.moduleId}.linux.ppc64le;
-                      requires static org.bytedeco.${javacpp.moduleId}.macosx.x86_64;
-                      requires static org.bytedeco.${javacpp.moduleId}.windows.x86;
-                      requires static org.bytedeco.${javacpp.moduleId}.windows.x86_64;
+                    module com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.platform {
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.x86;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.x86_64;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.armhf;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.arm64;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.linux.ppc64le;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.macosx.x86_64;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.windows.x86;
+                      requires static com.oracle.svm.shadowed.org.bytedeco.${javacpp.moduleId}.windows.x86_64;
                     }
                   </moduleInfoSource>
                 </module>

@@ -62,7 +62,7 @@
     <javacpp.compiler.skip>false</javacpp.compiler.skip> <!-- To skip native compilation phase: -Djavacpp.compiler.skip=true -->
     <javacpp.moduleId>${project.artifactId}</javacpp.moduleId>
     <javacpp.packageName>${project.artifactId}</javacpp.packageName>
-    <javacpp.platform.nativeOutputPath>org/bytedeco/${javacpp.packageName}/${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.nativeOutputPath>
+    <javacpp.platform.nativeOutputPath>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.nativeOutputPath>
     <javacpp.platform.root></javacpp.platform.root>
     <javacpp.platform.compiler></javacpp.platform.compiler>
     <javacpp.platform.extension></javacpp.platform.extension>
@@ -158,7 +158,7 @@
             </goals>
             <configuration>
               <includes>
-                <include>org/bytedeco/${javacpp.packageName}/presets/*.java</include>
+                <include>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/presets/*.java</include>
               </includes>
             </configuration>
           </execution>
@@ -187,7 +187,7 @@
           <classPath>${project.build.outputDirectory}</classPath>
           <includePaths>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/</includePath>
-            <includePath>${basedir}/target/classes/org/bytedeco/${javacpp.packageName}/include/</includePath>
+            <includePath>${basedir}/target/classes/com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/include/</includePath>
           </includePaths>
           <linkPaths>
             <linkPath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/lib/</linkPath>
@@ -195,29 +195,29 @@
           <preloadPath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/bin/</preloadPath>
           <resourcePaths>
             <resourcePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/</resourcePath>
-            <resourcePath>${basedir}/target/classes/org/bytedeco/${javacpp.packageName}/</resourcePath>
+            <resourcePath>${basedir}/target/classes/com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/</resourcePath>
           </resourcePaths>
           <executablePaths>
             <executablePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/bin/</executablePath>
           </executablePaths>
           <buildResources>
             <buildResource>/${javacpp.platform.library.path}/</buildResource>
-            <buildResource>/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/</buildResource>
-            <buildResource>/org/bytedeco/javacpp/${javacpp.platform}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/</buildResource>
+            <buildResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}/</buildResource>
           </buildResources>
           <includeResources>
             <includeResource>/${javacpp.platform.library.path}/include/</includeResource>
-            <includeResource>/org/bytedeco/javacpp/include/</includeResource>
-            <includeResource>/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/include/</includeResource>
-            <includeResource>/org/bytedeco/javacpp/${javacpp.platform}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/include/</includeResource>
+            <includeResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}/include/</includeResource>
           </includeResources>
           <linkResources>
             <linkResource>/${javacpp.platform.library.path}/</linkResource>
             <linkResource>/${javacpp.platform.library.path}/lib/</linkResource>
-            <linkResource>/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/</linkResource>
-            <linkResource>/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/lib/</linkResource>
-            <linkResource>/org/bytedeco/javacpp/${javacpp.platform}/</linkResource>
-            <linkResource>/org/bytedeco/javacpp/${javacpp.platform}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}${javacpp.platform.extension}/lib/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}/</linkResource>
+            <linkResource>/com/oracle/svm/shadowed/org/bytedeco/javacpp/${javacpp.platform}/lib/</linkResource>
           </linkResources>
         </configuration>
         <executions>
@@ -282,7 +282,7 @@
             <configuration>
               <skip>${javacpp.parser.skip}</skip>
               <outputDirectory>${project.basedir}/src/gen/java</outputDirectory>
-              <classOrPackageName>org.bytedeco.${javacpp.packageName}.presets.*</classOrPackageName>
+              <classOrPackageName>com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.presets.*</classOrPackageName>
             </configuration>
           </execution>
           <execution>
@@ -294,7 +294,7 @@
             <configuration>
               <outputDirectory>${project.build.directory}/native/${javacpp.platform.nativeOutputPath}</outputDirectory>
               <skip>${javacpp.compiler.skip}</skip>
-              <classOrPackageName>org.bytedeco.${javacpp.packageName}.**</classOrPackageName>
+              <classOrPackageName>com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.**</classOrPackageName>
               <copyLibs>true</copyLibs>
               <copyResources>true</copyResources>
               <configDirectory>${project.build.directory}/native/META-INF/native-image/${javacpp.platform}${javacpp.platform.extension}/</configDirectory>
@@ -330,10 +330,10 @@
                 </manifestEntries>
               </archive>
               <includes>
-                <include>org/bytedeco/${javacpp.packageName}/**</include>
+                <include>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/**</include>
               </includes>
               <excludes>
-                <exclude>org/bytedeco/${javacpp.packageName}/include/</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/include/</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -346,7 +346,7 @@
             <configuration>
               <classifier>${javacpp.platform}${javacpp.platform.extension}</classifier>
               <skipIfEmpty>true</skipIfEmpty>
-              <includes> 
+              <includes>
                 <!-- In case of successive builds for multiple platforms
                      without cleaning, ensures we only include files for
                      this platform. -->
@@ -360,9 +360,9 @@
               </archive>
               <classesDirectory>${project.build.directory}/native</classesDirectory>
               <excludes>
-                <exclude>org/bytedeco/${javacpp.packageName}/windows-*/*.exp</exclude>
-                <exclude>org/bytedeco/${javacpp.packageName}/windows-*/*.lib</exclude>
-                <exclude>org/bytedeco/${javacpp.packageName}/windows-*/*.obj</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/windows-*/*.exp</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/windows-*/*.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/windows-*/*.obj</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -393,8 +393,8 @@
                 <module>
                   <file>${project.build.directory}/${project.artifactId}-${javacpp.platform}${javacpp.platform.extension}.jar</file>
                   <moduleInfoSource>
-                    open module org.bytedeco.${javacpp.packageName}.${javacpp.platform.module} {
-                      requires transitive org.bytedeco.${javacpp.packageName};
+                    open module com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName}.${javacpp.platform.module} {
+                      requires transitive com.oracle.svm.shadowed.org.bytedeco.${javacpp.packageName};
                     }
                   </moduleInfoSource>
                 </module>
@@ -575,61 +575,7 @@
         </property>
       </activation>
       <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>flycapture</module>
-        <module>spinnaker</module>
-        <module>libdc1394</module>
-        <module>libfreenect</module>
-        <module>libfreenect2</module>
-        <module>librealsense</module>
-        <module>librealsense2</module>
-        <module>videoinput</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>arrow</module>
-        <module>hdf5</module>
-        <module>hyperscan</module>
-        <module>mkl</module>
-        <module>mkl-dnn</module>
-        <module>dnnl</module>
-        <module>openblas</module>
-        <module>arpack-ng</module>
-        <module>cminpack</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>cpython</module>
-        <module>numpy</module>
-        <module>scipy</module>
-        <module>gym</module>
         <module>llvm</module>
-        <module>libffi</module>
-        <module>libpostal</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>caffe</module>
-        <module>openpose</module>
-        <module>cuda</module>
-        <module>nvcodec</module>
-        <module>opencl</module>
-        <module>mxnet</module>
-        <module>pytorch</module>
-        <module>tensorflow</module>
-        <module>tensorflow-lite</module>
-        <module>tensorrt</module>
-        <module>ale</module>
-        <module>depthai</module>
-        <module>onnx</module>
-        <module>ngraph</module>
-        <module>onnxruntime</module>
-        <module>tvm</module>
-        <module>liquidfun</module>
-        <module>qt</module>
-        <module>skia</module>
-        <module>cpu_features</module>
-        <module>modsecurity</module>
-        <module>systems</module>
       </modules>
       <properties>
         <javacpp.platform>${os.name}-${os.arch}</javacpp.platform>
@@ -747,331 +693,6 @@
       </properties>
     </profile>
 
-    <!-- Provide convenient profiles to list supported modules for each platform and set commonly used paths for Android -->
-    <profile>
-      <id>javacpp-platform-android-arm</id>
-      <activation>
-        <property>
-          <name>javacpp.platform</name>
-          <value>android-arm</value>
-        </property>
-      </activation>
-      <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>openblas</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>libffi</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>tensorflow</module>
-        <module>cpu_features</module>
-      </modules>
-      <properties>
-        <javacpp.platform.nativeOutputPath>${javacpp.platform.library.path}</javacpp.platform.nativeOutputPath>
-        <javacpp.platform>android-arm</javacpp.platform>
-        <javacpp.platform.root>${user.home}/Android/android-ndk/</javacpp.platform.root>
-        <javacpp.platform.compiler>toolchains/llvm/prebuilt/${os.kernel}-${os.arch}/bin/clang++</javacpp.platform.compiler>
-        <javacpp.platform.properties>${javacpp.platform}-clang</javacpp.platform.properties>
-        <javacpp.platform.android-arm>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.android-arm>
-        <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
-        <javacpp.platform.android-x86></javacpp.platform.android-x86>
-        <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
-        <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
-        <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
-        <javacpp.platform.ios-x86></javacpp.platform.ios-x86>
-        <javacpp.platform.ios-x86_64></javacpp.platform.ios-x86_64>
-        <javacpp.platform.linux-armhf></javacpp.platform.linux-armhf>
-        <javacpp.platform.linux-arm64></javacpp.platform.linux-arm64>
-        <javacpp.platform.linux-ppc64le></javacpp.platform.linux-ppc64le>
-        <javacpp.platform.linux-x86></javacpp.platform.linux-x86>
-        <javacpp.platform.linux-x86_64></javacpp.platform.linux-x86_64>
-        <javacpp.platform.macosx-x86_64></javacpp.platform.macosx-x86_64>
-        <javacpp.platform.windows-x86></javacpp.platform.windows-x86>
-        <javacpp.platform.windows-x86_64></javacpp.platform.windows-x86_64>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp-platform-android-arm64</id>
-      <activation>
-        <property>
-          <name>javacpp.platform</name>
-          <value>android-arm64</value>
-        </property>
-      </activation>
-      <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>openblas</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>libffi</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>tensorflow</module>
-        <module>cpu_features</module>
-      </modules>
-      <properties>
-        <javacpp.platform.nativeOutputPath>${javacpp.platform.library.path}</javacpp.platform.nativeOutputPath>
-        <javacpp.platform>android-arm64</javacpp.platform>
-        <javacpp.platform.root>${user.home}/Android/android-ndk/</javacpp.platform.root>
-        <javacpp.platform.compiler>toolchains/llvm/prebuilt/${os.kernel}-${os.arch}/bin/clang++</javacpp.platform.compiler>
-        <javacpp.platform.properties>${javacpp.platform}-clang</javacpp.platform.properties>
-        <javacpp.platform.android-arm></javacpp.platform.android-arm>
-        <javacpp.platform.android-arm64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.android-arm64>
-        <javacpp.platform.android-x86></javacpp.platform.android-x86>
-        <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
-        <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
-        <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
-        <javacpp.platform.ios-x86></javacpp.platform.ios-x86>
-        <javacpp.platform.ios-x86_64></javacpp.platform.ios-x86_64>
-        <javacpp.platform.linux-armhf></javacpp.platform.linux-armhf>
-        <javacpp.platform.linux-arm64></javacpp.platform.linux-arm64>
-        <javacpp.platform.linux-ppc64le></javacpp.platform.linux-ppc64le>
-        <javacpp.platform.linux-x86></javacpp.platform.linux-x86>
-        <javacpp.platform.linux-x86_64></javacpp.platform.linux-x86_64>
-        <javacpp.platform.macosx-x86_64></javacpp.platform.macosx-x86_64>
-        <javacpp.platform.windows-x86></javacpp.platform.windows-x86>
-        <javacpp.platform.windows-x86_64></javacpp.platform.windows-x86_64>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp-platform-android-x86</id>
-      <activation>
-        <property>
-          <name>javacpp.platform</name>
-          <value>android-x86</value>
-        </property>
-      </activation>
-      <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>openblas</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>libffi</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>tensorflow</module>
-        <module>cpu_features</module>
-      </modules>
-      <properties>
-        <javacpp.platform.nativeOutputPath>${javacpp.platform.library.path}</javacpp.platform.nativeOutputPath>
-        <javacpp.platform>android-x86</javacpp.platform>
-        <javacpp.platform.root>${user.home}/Android/android-ndk/</javacpp.platform.root>
-        <javacpp.platform.compiler>toolchains/llvm/prebuilt/${os.kernel}-${os.arch}/bin/clang++</javacpp.platform.compiler>
-        <javacpp.platform.properties>${javacpp.platform}-clang</javacpp.platform.properties>
-        <javacpp.platform.android-arm></javacpp.platform.android-arm>
-        <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
-        <javacpp.platform.android-x86>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.android-x86>
-        <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
-        <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
-        <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
-        <javacpp.platform.ios-x86></javacpp.platform.ios-x86>
-        <javacpp.platform.ios-x86_64></javacpp.platform.ios-x86_64>
-        <javacpp.platform.linux-armhf></javacpp.platform.linux-armhf>
-        <javacpp.platform.linux-arm64></javacpp.platform.linux-arm64>
-        <javacpp.platform.linux-ppc64le></javacpp.platform.linux-ppc64le>
-        <javacpp.platform.linux-x86></javacpp.platform.linux-x86>
-        <javacpp.platform.linux-x86_64></javacpp.platform.linux-x86_64>
-        <javacpp.platform.macosx-x86_64></javacpp.platform.macosx-x86_64>
-        <javacpp.platform.windows-x86></javacpp.platform.windows-x86>
-        <javacpp.platform.windows-x86_64></javacpp.platform.windows-x86_64>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp-platform-android-x86_64</id>
-      <activation>
-        <property>
-          <name>javacpp.platform</name>
-          <value>android-x86_64</value>
-        </property>
-      </activation>
-      <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>openblas</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>libffi</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>tensorflow</module>
-        <module>cpu_features</module>
-      </modules>
-      <properties>
-        <javacpp.platform.nativeOutputPath>${javacpp.platform.library.path}</javacpp.platform.nativeOutputPath>
-        <javacpp.platform>android-x86_64</javacpp.platform>
-        <javacpp.platform.root>${user.home}/Android/android-ndk/</javacpp.platform.root>
-        <javacpp.platform.compiler>toolchains/llvm/prebuilt/${os.kernel}-${os.arch}/bin/clang++</javacpp.platform.compiler>
-        <javacpp.platform.properties>${javacpp.platform}-clang</javacpp.platform.properties>
-        <javacpp.platform.android-arm></javacpp.platform.android-arm>
-        <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
-        <javacpp.platform.android-x86></javacpp.platform.android-x86>
-        <javacpp.platform.android-x86_64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.android-x86_64>
-        <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
-        <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
-        <javacpp.platform.ios-x86></javacpp.platform.ios-x86>
-        <javacpp.platform.ios-x86_64></javacpp.platform.ios-x86_64>
-        <javacpp.platform.linux-armhf></javacpp.platform.linux-armhf>
-        <javacpp.platform.linux-arm64></javacpp.platform.linux-arm64>
-        <javacpp.platform.linux-ppc64le></javacpp.platform.linux-ppc64le>
-        <javacpp.platform.linux-x86></javacpp.platform.linux-x86>
-        <javacpp.platform.linux-x86_64></javacpp.platform.linux-x86_64>
-        <javacpp.platform.macosx-x86_64></javacpp.platform.macosx-x86_64>
-        <javacpp.platform.windows-x86></javacpp.platform.windows-x86>
-        <javacpp.platform.windows-x86_64></javacpp.platform.windows-x86_64>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp-platform-ios-arm</id>
-      <activation>
-        <property>
-          <name>javacpp.platform</name>
-          <value>ios-arm</value>
-        </property>
-      </activation>
-      <modules>
-        <module>opencv</module>
-        <module>openblas</module>
-        <module>skia</module>
-      </modules>
-      <properties>
-        <javacpp.platform.android-arm></javacpp.platform.android-arm>
-        <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
-        <javacpp.platform.android-x86></javacpp.platform.android-x86>
-        <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
-        <javacpp.platform.ios-arm>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.ios-arm>
-        <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
-        <javacpp.platform.ios-x86></javacpp.platform.ios-x86>
-        <javacpp.platform.ios-x86_64></javacpp.platform.ios-x86_64>
-        <javacpp.platform.linux-armhf></javacpp.platform.linux-armhf>
-        <javacpp.platform.linux-arm64></javacpp.platform.linux-arm64>
-        <javacpp.platform.linux-ppc64le></javacpp.platform.linux-ppc64le>
-        <javacpp.platform.linux-x86></javacpp.platform.linux-x86>
-        <javacpp.platform.linux-x86_64></javacpp.platform.linux-x86_64>
-        <javacpp.platform.macosx-x86_64></javacpp.platform.macosx-x86_64>
-        <javacpp.platform.windows-x86></javacpp.platform.windows-x86>
-        <javacpp.platform.windows-x86_64></javacpp.platform.windows-x86_64>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp-platform-ios-arm64</id>
-      <activation>
-        <property>
-          <name>javacpp.platform</name>
-          <value>ios-arm64</value>
-        </property>
-      </activation>
-      <modules>
-        <module>opencv</module>
-        <module>openblas</module>
-        <module>skia</module>
-      </modules>
-      <properties>
-        <javacpp.platform.android-arm></javacpp.platform.android-arm>
-        <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
-        <javacpp.platform.android-x86></javacpp.platform.android-x86>
-        <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
-        <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
-        <javacpp.platform.ios-arm64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.ios-arm64>
-        <javacpp.platform.ios-x86></javacpp.platform.ios-x86>
-        <javacpp.platform.ios-x86_64></javacpp.platform.ios-x86_64>
-        <javacpp.platform.linux-armhf></javacpp.platform.linux-armhf>
-        <javacpp.platform.linux-arm64></javacpp.platform.linux-arm64>
-        <javacpp.platform.linux-ppc64le></javacpp.platform.linux-ppc64le>
-        <javacpp.platform.linux-x86></javacpp.platform.linux-x86>
-        <javacpp.platform.linux-x86_64></javacpp.platform.linux-x86_64>
-        <javacpp.platform.macosx-x86_64></javacpp.platform.macosx-x86_64>
-        <javacpp.platform.windows-x86></javacpp.platform.windows-x86>
-        <javacpp.platform.windows-x86_64></javacpp.platform.windows-x86_64>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp-platform-ios-x86</id>
-      <activation>
-        <property>
-          <name>javacpp.platform</name>
-          <value>ios-x86</value>
-        </property>
-      </activation>
-      <modules>
-        <module>opencv</module>
-        <module>openblas</module>
-        <module>skia</module>
-      </modules>
-      <properties>
-        <javacpp.platform.android-arm></javacpp.platform.android-arm>
-        <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
-        <javacpp.platform.android-x86></javacpp.platform.android-x86>
-        <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
-        <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
-        <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
-        <javacpp.platform.ios-x86>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.ios-x86>
-        <javacpp.platform.ios-x86_64></javacpp.platform.ios-x86_64>
-        <javacpp.platform.linux-armhf></javacpp.platform.linux-armhf>
-        <javacpp.platform.linux-arm64></javacpp.platform.linux-arm64>
-        <javacpp.platform.linux-ppc64le></javacpp.platform.linux-ppc64le>
-        <javacpp.platform.linux-x86></javacpp.platform.linux-x86>
-        <javacpp.platform.linux-x86_64></javacpp.platform.linux-x86_64>
-        <javacpp.platform.macosx-x86_64></javacpp.platform.macosx-x86_64>
-        <javacpp.platform.windows-x86></javacpp.platform.windows-x86>
-        <javacpp.platform.windows-x86_64></javacpp.platform.windows-x86_64>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp-platform-ios-x86_64</id>
-      <activation>
-        <property>
-          <name>javacpp.platform</name>
-          <value>ios-x86_64</value>
-        </property>
-      </activation>
-      <modules>
-        <module>opencv</module>
-        <module>openblas</module>
-        <module>skia</module>
-      </modules>
-      <properties>
-        <javacpp.platform.android-arm></javacpp.platform.android-arm>
-        <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
-        <javacpp.platform.android-x86></javacpp.platform.android-x86>
-        <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
-        <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
-        <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
-        <javacpp.platform.ios-x86></javacpp.platform.ios-x86>
-        <javacpp.platform.ios-x86_64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.ios-x86_64>
-        <javacpp.platform.linux-armhf></javacpp.platform.linux-armhf>
-        <javacpp.platform.linux-arm64></javacpp.platform.linux-arm64>
-        <javacpp.platform.linux-ppc64le></javacpp.platform.linux-ppc64le>
-        <javacpp.platform.linux-x86></javacpp.platform.linux-x86>
-        <javacpp.platform.linux-x86_64></javacpp.platform.linux-x86_64>
-        <javacpp.platform.macosx-x86_64></javacpp.platform.macosx-x86_64>
-        <javacpp.platform.windows-x86></javacpp.platform.windows-x86>
-        <javacpp.platform.windows-x86_64></javacpp.platform.windows-x86_64>
-      </properties>
-    </profile>
-
     <profile>
       <id>javacpp-platform-linux-armhf</id>
       <activation>
@@ -1081,34 +702,7 @@
         </property>
       </activation>
       <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>flycapture</module>
-        <module>libdc1394</module>
-        <module>libfreenect</module>
-        <module>librealsense</module>
-        <module>librealsense2</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>arrow</module>
-        <module>hdf5</module>
-        <module>openblas</module>
-        <module>arpack-ng</module>
-        <module>cminpack</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>cpython</module>
-        <module>numpy</module>
-        <module>scipy</module>
-        <module>gym</module>
         <module>llvm</module>
-        <module>libffi</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>depthai</module>
-        <module>cpu_features</module>
-        <module>systems</module>
       </modules>
       <properties>
         <javacpp.platform.android-arm></javacpp.platform.android-arm>
@@ -1139,41 +733,7 @@
         </property>
       </activation>
       <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>flycapture</module>
-        <module>libdc1394</module>
-        <module>libfreenect</module>
-        <module>librealsense</module>
-        <module>librealsense2</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>arrow</module>
-        <module>hdf5</module>
-        <module>dnnl</module>
-        <module>openblas</module>
-        <module>arpack-ng</module>
-        <module>cminpack</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>cpython</module>
-        <module>numpy</module>
-        <module>scipy</module>
-        <module>gym</module>
         <module>llvm</module>
-        <module>libffi</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>cuda</module>
-        <module>nvcodec</module>
-        <module>opencl</module>
-        <module>tensorflow-lite</module>
-        <module>tensorrt</module>
-        <module>depthai</module>
-        <module>onnxruntime</module>
-        <module>cpu_features</module>
-        <module>systems</module>
       </modules>
       <properties>
         <javacpp.platform.android-arm></javacpp.platform.android-arm>
@@ -1204,32 +764,7 @@
         </property>
       </activation>
       <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>libdc1394</module>
-        <module>libfreenect</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>arrow</module>
-        <module>hdf5</module>
-        <module>openblas</module>
-        <module>arpack-ng</module>
-        <module>cminpack</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>cpython</module>
-        <module>numpy</module>
-        <module>scipy</module>
-        <module>gym</module>
         <module>llvm</module>
-        <module>libffi</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>cuda</module>
-        <module>nvcodec</module>
-        <module>cpu_features</module>
-        <module>systems</module>
       </modules>
       <properties>
         <javacpp.platform.android-arm></javacpp.platform.android-arm>
@@ -1260,42 +795,7 @@
         </property>
       </activation>
       <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>flycapture</module>
-        <module>libdc1394</module>
-        <module>libfreenect</module>
-        <module>libfreenect2</module>
-        <module>librealsense</module>
-        <module>librealsense2</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>arrow</module>
-        <module>hdf5</module>
-        <module>mkl</module>
-        <module>openblas</module>
-        <module>arpack-ng</module>
-        <module>cminpack</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>cpython</module>
-        <module>numpy</module>
-        <module>scipy</module>
-        <module>gym</module>
         <module>llvm</module>
-        <module>libffi</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>caffe</module>
-        <module>mxnet</module>
-        <module>tensorflow</module>
-        <module>ale</module>
-        <module>depthai</module>
-        <module>liquidfun</module>
-        <module>skia</module>
-        <module>cpu_features</module>
-        <module>systems</module>
       </modules>
       <properties>
         <javacpp.platform.android-arm></javacpp.platform.android-arm>
@@ -1326,60 +826,7 @@
         </property>
       </activation>
       <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>flycapture</module>
-        <module>spinnaker</module>
-        <module>libdc1394</module>
-        <module>libfreenect</module>
-        <module>libfreenect2</module>
-        <module>librealsense</module>
-        <module>librealsense2</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>arrow</module>
-        <module>hdf5</module>
-        <module>hyperscan</module>
-        <module>mkl</module>
-        <module>mkl-dnn</module>
-        <module>dnnl</module>
-        <module>openblas</module>
-        <module>arpack-ng</module>
-        <module>cminpack</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>cpython</module>
-        <module>numpy</module>
-        <module>scipy</module>
-        <module>gym</module>
         <module>llvm</module>
-        <module>libffi</module>
-        <module>libpostal</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>caffe</module>
-        <module>openpose</module>
-        <module>cuda</module>
-        <module>nvcodec</module>
-        <module>opencl</module>
-        <module>mxnet</module>
-        <module>pytorch</module>
-        <module>tensorflow</module>
-        <module>tensorflow-lite</module>
-        <module>tensorrt</module>
-        <module>ale</module>
-        <module>depthai</module>
-        <module>onnx</module>
-        <module>ngraph</module>
-        <module>onnxruntime</module>
-        <module>tvm</module>
-        <module>liquidfun</module>
-        <module>qt</module>
-        <module>skia</module>
-        <module>cpu_features</module>
-        <module>modsecurity</module>
-        <module>systems</module>
       </modules>
       <properties>
         <javacpp.platform.android-arm></javacpp.platform.android-arm>
@@ -1410,57 +857,7 @@
         </property>
       </activation>
       <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>libdc1394</module>
-        <module>libfreenect</module>
-        <module>libfreenect2</module>
-        <module>librealsense</module>
-        <module>librealsense2</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>arrow</module>
-        <module>hdf5</module>
-        <module>hyperscan</module>
-        <module>mkl</module>
-        <module>mkl-dnn</module>
-        <module>dnnl</module>
-        <module>openblas</module>
-        <module>arpack-ng</module>
-        <module>cminpack</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>cpython</module>
-        <module>numpy</module>
-        <module>scipy</module>
-        <module>gym</module>
-        <module>llvm</module>
-        <module>libffi</module>
-        <module>libpostal</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>caffe</module>
-        <module>openpose</module>
-<!--        <module>cuda</module>-->
-        <module>opencl</module>
-        <module>mxnet</module>
-        <module>pytorch</module>
-        <module>tensorflow</module>
-        <module>tensorflow-lite</module>
-        <module>ale</module>
-        <module>depthai</module>
-        <module>onnx</module>
-        <module>ngraph</module>
-        <module>onnxruntime</module>
-        <module>tvm</module>
-        <module>liquidfun</module>
-        <module>qt</module>
-        <module>skia</module>
-        <module>cpu_features</module>
-        <module>modsecurity</module>
-        <module>systems</module>
-      </modules>
+        <module>llvm</module></modules>
       <properties>
         <javacpp.platform.android-arm></javacpp.platform.android-arm>
         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
@@ -1490,38 +887,7 @@
         </property>
       </activation>
       <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>flycapture</module>
-        <module>spinnaker</module>
-        <module>libdc1394</module>
-        <module>libfreenect</module>
-        <module>librealsense</module>
-        <module>librealsense2</module>
-        <module>videoinput</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>arrow</module>
-        <module>hdf5</module>
-        <module>mkl</module>
-        <module>openblas</module>
-        <module>arpack-ng</module>
-        <module>cminpack</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>cpython</module>
-        <module>numpy</module>
-        <module>scipy</module>
-        <module>gym</module>
         <module>llvm</module>
-        <module>libffi</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>ale</module>
-        <module>liquidfun</module>
-        <module>cpu_features</module>
-        <module>systems</module>
       </modules>
       <properties>
         <javacpp.platform.android-arm></javacpp.platform.android-arm>
@@ -1552,55 +918,7 @@
         </property>
       </activation>
       <modules>
-        <module>opencv</module>
-        <module>ffmpeg</module>
-        <module>flycapture</module>
-        <module>spinnaker</module>
-        <module>libdc1394</module>
-        <module>libfreenect</module>
-        <module>libfreenect2</module>
-        <module>librealsense</module>
-        <module>librealsense2</module>
-        <module>videoinput</module>
-        <module>artoolkitplus</module>
-        <module>chilitags</module>
-        <module>flandmark</module>
-        <module>arrow</module>
-        <module>hdf5</module>
-        <module>hyperscan</module>
-        <module>mkl</module>
-        <module>mkl-dnn</module>
-        <module>dnnl</module>
-        <module>openblas</module>
-        <module>arpack-ng</module>
-        <module>cminpack</module>
-        <module>fftw</module>
-        <module>gsl</module>
-        <module>cpython</module>
-        <module>numpy</module>
-        <module>scipy</module>
-        <module>gym</module>
         <module>llvm</module>
-        <module>libffi</module>
-        <module>libpostal</module>
-        <module>leptonica</module>
-        <module>tesseract</module>
-        <module>cuda</module>
-        <module>nvcodec</module>
-        <module>opencl</module>
-        <module>mxnet</module>
-        <module>pytorch</module>
-        <module>tensorflow</module>
-        <module>tensorflow-lite</module>
-        <module>tensorrt</module>
-        <module>ale</module>
-        <module>onnx</module>
-        <module>onnxruntime</module>
-        <module>tvm</module>
-        <module>liquidfun</module>
-        <module>qt</module>
-        <module>cpu_features</module>
-        <module>systems</module>
       </modules>
       <properties>
         <javacpp.platform.android-arm></javacpp.platform.android-arm>
@@ -1624,101 +942,6 @@
 
     <!-- Profiles to modify the transitive dependencies when picked up from other pom.xml files, for example:
          mvn -Djavacpp.platform.custom -Djavacpp.platform.host -Djavacpp.platform.linux-x86_64 -Djavacpp.platform.windows-x86_64 ... -->
-    <profile>
-      <id>javacpp.platform.android-arm-true</id>
-      <activation>
-        <property>
-          <name>javacpp.platform.android-arm</name>
-        </property>
-      </activation>
-      <properties>
-        <javacpp.platform.android-arm>android-arm${javacpp.platform.extension}</javacpp.platform.android-arm>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp.platform.android-arm64-true</id>
-      <activation>
-        <property>
-          <name>javacpp.platform.android-arm64</name>
-        </property>
-      </activation>
-      <properties>
-        <javacpp.platform.android-arm64>android-arm64${javacpp.platform.extension}</javacpp.platform.android-arm64>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp.platform.android-x86-true</id>
-      <activation>
-        <property>
-          <name>javacpp.platform.android-x86</name>
-        </property>
-      </activation>
-      <properties>
-        <javacpp.platform.android-x86>android-x86${javacpp.platform.extension}</javacpp.platform.android-x86>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp.platform.android-x86_64-true</id>
-      <activation>
-        <property>
-          <name>javacpp.platform.android-x86_64</name>
-        </property>
-      </activation>
-      <properties>
-        <javacpp.platform.android-x86_64>android-x86_64${javacpp.platform.extension}</javacpp.platform.android-x86_64>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp.platform.ios-arm-true</id>
-      <activation>
-        <property>
-          <name>javacpp.platform.ios-arm</name>
-        </property>
-      </activation>
-      <properties>
-        <javacpp.platform.ios-arm>ios-arm${javacpp.platform.extension}</javacpp.platform.ios-arm>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp.platform.ios-arm64-true</id>
-      <activation>
-        <property>
-          <name>javacpp.platform.ios-arm64</name>
-        </property>
-      </activation>
-      <properties>
-        <javacpp.platform.ios-arm64>ios-arm64${javacpp.platform.extension}</javacpp.platform.ios-arm64>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp.platform.ios-x86-true</id>
-      <activation>
-        <property>
-          <name>javacpp.platform.ios-x86</name>
-        </property>
-      </activation>
-      <properties>
-        <javacpp.platform.ios-x86>ios-x86${javacpp.platform.extension}</javacpp.platform.ios-x86>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>javacpp.platform.ios-x86_64-true</id>
-      <activation>
-        <property>
-          <name>javacpp.platform.ios-x86_64</name>
-        </property>
-      </activation>
-      <properties>
-        <javacpp.platform.ios-x86_64>ios-x86_64${javacpp.platform.extension}</javacpp.platform.ios-x86_64>
-      </properties>
-    </profile>
 
     <profile>
       <id>javacpp.platform.linux-armhf-true</id>

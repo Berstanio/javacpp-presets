@@ -36,7 +36,7 @@
           <includePaths>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/</includePath>
             <includePath>${basedir}/cppbuild/${javacpp.platform}${javacpp.platform.extension}/include/polly/</includePath>
-            <includePath>${basedir}/target/classes/org/bytedeco/${javacpp.packageName}/include/</includePath>
+            <includePath>${basedir}/target/classes/com/oracle/svm/shadowed/org/bytedeco/${javacpp.packageName}/include/</includePath>
           </includePaths>
         </configuration>
       </plugin>
@@ -47,7 +47,7 @@
             <id>default-jar</id>
             <configuration>
               <includes>
-                <include>org/bytedeco/llvm/**</include>
+                <include>com/oracle/svm/shadowed/org/bytedeco/llvm/**</include>
               </includes>
             </configuration>
           </execution>
@@ -57,15 +57,15 @@
             <configuration>
               <excludes>
                 <exclude>${javacpp.platform.library.path}/lib/*.so*</exclude>
-                <exclude>org/bytedeco/llvm/${javacpp.platform}/*.exp</exclude>
-                <exclude>org/bytedeco/llvm/${javacpp.platform}/*.lib</exclude>
-                <exclude>org/bytedeco/llvm/${javacpp.platform}/*.obj</exclude>
-                <exclude>org/bytedeco/llvm/${javacpp.platform}/bin/*</exclude>
-                <exclude>org/bytedeco/llvm/${javacpp.platform}/lib/*.a</exclude>
-                <exclude>org/bytedeco/llvm/${javacpp.platform}/lib/*.dylib</exclude>
-                <exclude>org/bytedeco/llvm/${javacpp.platform}/lib/*.so*</exclude>
-                <exclude>org/bytedeco/llvm/${javacpp.platform}/lib/clang.lib</exclude>
-                <exclude>org/bytedeco/llvm/${javacpp.platform}/lib/LLVM.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/llvm/${javacpp.platform}/*.exp</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/llvm/${javacpp.platform}/*.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/llvm/${javacpp.platform}/*.obj</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/llvm/${javacpp.platform}/bin/*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/llvm/${javacpp.platform}/lib/*.a</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/llvm/${javacpp.platform}/lib/*.dylib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/llvm/${javacpp.platform}/lib/*.so*</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/llvm/${javacpp.platform}/lib/clang.lib</exclude>
+                <exclude>com/oracle/svm/shadowed/org/bytedeco/llvm/${javacpp.platform}/lib/LLVM.lib</exclude>
               </excludes>
             </configuration>
           </execution>

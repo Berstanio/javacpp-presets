@@ -1,8 +1,7 @@
 import java.io.File;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.llvm.clang.*;
-import org.bytedeco.llvm.global.clang;
+import  com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.global.clang;
 
 /**
  * Reference

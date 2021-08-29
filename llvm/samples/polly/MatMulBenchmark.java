@@ -1,10 +1,8 @@
 import java.util.Random;
-import org.bytedeco.javacpp.*;
+import  com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
 import org.bytedeco.libffi.*;
-import org.bytedeco.llvm.LLVM.*;
 
 import static org.bytedeco.libffi.global.ffi.*;
-import static org.bytedeco.llvm.global.LLVM.*;
 import static org.bytedeco.mkl.global.mkl_rt.*;
 
 /**
@@ -19,7 +17,7 @@ import static org.bytedeco.mkl.global.mkl_rt.*;
  * clang -O3 -march=native -mllvm -polly -mllvm -polly-vectorizer=stripmine
  *
  * Note: Instead of JNA or libffi, to obtain maximum performance, FunctionPointer should be used as shown here:
- * https://github.com/bytedeco/javacpp/blob/master/src/test/java/org/bytedeco/javacpp/PointerTest.java
+ * https://github.com/bytedeco/javacpp/blob/master/src/test/java/com/oracle/svm/shadowed/org/bytedeco/javacpp/PointerTest.java
  *
  * @author Yu Kobayashi
  */

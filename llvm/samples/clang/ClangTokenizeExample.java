@@ -3,9 +3,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.llvm.clang.*;
-import org.bytedeco.llvm.global.clang;
+import  com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.global.clang;
 
 /**
  * Reference

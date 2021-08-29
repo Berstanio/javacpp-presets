@@ -4,9 +4,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-import org.bytedeco.javacpp.*;
-import org.bytedeco.llvm.clang.*;
-import org.bytedeco.llvm.global.clang;
+import  com.oracle.svm.shadowed.org.bytedeco.javacpp.*;
+import com.oracle.svm.shadowed.org.bytedeco.llvm.global.clang;
 
 /**
  * Reference
